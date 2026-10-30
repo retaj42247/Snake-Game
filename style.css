@@ -1,0 +1,43 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  background: black;
+}
+h1{
+  color: #fff;
+  font-size: 45px;
+}
+#board {
+  touch-action: none;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+html, body {
+  overscroll-behavior: none;
+}
+.game-over-screen {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+  color: white;
+  font-family: monospace;
+  z-index: 10;
+}
+.game-over-screen h1{
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.game-over-screen p{
+  font-size: 18px;
+  color: #E1DFDF;
+  margin: 15px 0;
+}
+.game-over-screen.show{
+  display: block;
+}
