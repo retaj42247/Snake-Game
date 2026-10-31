@@ -34,13 +34,13 @@ let touchStartX = 0;
 let touchStartY = 0;
 
 document.addEventListener("touchstart", function(e) {
-  touchStartX = e.changedTouches[0].screenX;
-  touchStartY = e.changedTouches[0].screenY;
+ let touchStartX = e.changedTouches[0].screenX;
+let  touchStartY = e.changedTouches[0].screenY;
 }, { passive: true });
 
 document.addEventListener("touchend", function(e) {
-  touchEndX = e.changedTouches[0].screenX;
-  touchEndY = e.changedTouches[0].screenY;
+ let touchEndX = e.changedTouches[0].screenX;
+ let touchEndY = e.changedTouches[0].screenY;
   
   let diffX = touchEndX - touchStartX;
   let diffY = touchEndY - touchStartY;
@@ -124,19 +124,19 @@ for(let i = 0; i < snakeBody.length; i++) {
 }
 
 function changeDirection(e) {
-  if(e.code == ArrowUp && velocityY != 1) {
+  if(e.code == "ArrowUp" && velocityY != 1) {
     velocityX = 0;
     velocityY = -1;
   }
-  else if (e.code == ArrowDown && velocityY != -1) {
+  else if (e.code == "ArrowDown" && velocityY != -1) {
     velocityX = 0;
     velocityY = 1;
   }
-  else if (e.code == ArrowLeft && velocityX != 1) {
+  else if (e.code == "ArrowLeft" && velocityX != 1) {
     velocityX = -1;
     velocityY = 0;
   }
-  else if (e.code == ArrowRight && velocityX != -1) {
+  else if (e.code == "ArrowRight" && velocityX != -1) {
     velocityX = 1;
     velocityY = 0;
   }
