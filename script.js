@@ -67,6 +67,11 @@ document.addEventListener("touchend", function(e) {
     }
   }
 }, { passive: true });
+
+ document.getElementById("gameOverScreen").addEventListener("click",
+  function () {
+    location.reload();
+  });
     
     placeFood();
     document.addEventListener("keyup", changeDirection);
@@ -107,7 +112,7 @@ function update() {
   snakeY = (snakeY + rows * blockSize) % (rows * blockSize);
   
   context.fillRect(snakeX, snakeY, blockSize, blockSize);
-  for(i = 0; i < snakeBody.length; i++) {
+  for(let i = 0; i < snakeBody.length; i++) {
     context.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize, blockSize);
   }
   
@@ -147,7 +152,3 @@ function changeDirection(e) {
   foodY = Math.floor(Math.random() * rows) * blockSize;
  }
 
-document.getElementById("gameOverScreen").addEventListener("click",
-  function () {
-    location.reload();
-  });
